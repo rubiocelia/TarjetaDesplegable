@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to right, rgb(236, 144, 144), rgb(130, 141, 241));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    border-radius: 8px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    transition: 1s;
+}
+
+.card:hover {
+    transform: translateX(50%);
+    border-radius: 8px;
+}
+
+.card .imgBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: 1s;
+    border-radius: 8px;
+}
+
+.card:hover .imgBox {
+    transform: rotateY(-180deg);
+    border-radius: 8px;
+}
+
+img {
+    width: 639px;
+    height: 798px;
+}
+
+.imgBox img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 8px;
+}
+
+.imgBox img:nth-child(2) {
+    /*nth-child(2) nos permite seleccionar varios elementos hijos de la clase indicando
+    su posicion segun el argumento o formula indicada*/
+    transform: rotateY(-180deg)
+}
+
+.details {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    /*propiedad de css grid. define el ancho de la canalizacion que separa las lineas de la rejilla en relacion con la dimension del elemento*/
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+span {
+    color: blueviolet;
+    font-size: 26px;
+}
+
+.social-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-icons a {
+    width: 30px;
+    height: 30px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.social-icons a:hover {
+    background-color: blueviolet;
+}
+
+.social-icons a i {
+    color: white;
+}
